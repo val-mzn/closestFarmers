@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <script>
     function search(){
         window.location.replace('/search/' + document.getElementById('searchvalue').value)
@@ -5,6 +6,9 @@
 </script>
 
 <nav class="navbar navbar-expand-lg px-2" style="background-color: var(--col-2);">
+=======
+<!--<nav class="navbar navbar-expand-lg px-2" style="background-color: var(--col-2);">
+>>>>>>> 0af2211d6a947675151be8b10f6f8fb2e116056d
     <a class="navbar-brand">Field To Fork</a>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
@@ -13,8 +17,38 @@
             <a class="nav-item nav-link {% if request.path == '/products' %}active {% endif %}" href="{% url 'products_list' %}">Produits</a>
         </div>
     </div>
+<<<<<<< HEAD
     <div class="d-flex">
         <input class="form-control me-1" type="search" placeholder="Search" id="searchvalue" aria-label="Search">
         <button class="btn btn-outline-success" type="submit" onclick="search()">Search</button>
     </div>
 </nav>
+=======
+    <form class="d-flex">
+        <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+</nav>-->
+<nav class="nav navbar navbar-expand-lg px-2">
+    <div class="logo">
+        <a class="nav-item nav-link {% if request.path == '/' %}active {% endif %}" href="{% url 'home' %}">Field To
+            Fork</a>
+    </div>
+    <div id="mainListDiv" class="main_list">
+        <ul class="navlinks">
+            <li><a class="nav-item nav-link {% if request.path == '/farms' %}active {% endif %}"
+                    href="{% url 'farms_list' %}">Les Fermes</a></li>
+            <li><a class="nav-item nav-link {% if request.path == '/products' %}active {% endif %}"
+                    href="{% url 'products_list' %}">Produits</a></li>
+        </ul>
+    </div>
+    <span class="navTrigger">
+        <i></i>
+        <i></i>
+        <i></i>
+    </span>
+</nav>
+
+<section class="home">
+</section>
+>>>>>>> 0af2211d6a947675151be8b10f6f8fb2e116056d
