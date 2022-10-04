@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg px-2" style="background-color: #e3f2fd;">
+    <a class="navbar-brand">Field To Fork</a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="{% url 'home' %}">Accueil</a>
+            <a class="nav-item nav-link" href="{% url 'farms_list' %}">Les Fermes</a>
+            <a class="nav-item nav-link" href="{% url 'products_list' %}">Produits</a>
+        </div>
+    </div>
+    <form class="d-flex">
+        <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+</nav>
