@@ -4,25 +4,27 @@
 
     {% if farms|length > 0 %}
         {% for farm in farms %}
-        <div class="card">
+        <div class="card mb-3">
             <div class="row g-0">
-            <div class="col-md-4">
-                <img src="https://www.parc-gatinais-francais.fr/wp-content/uploads/2015/09/Ferme-de-Moigny5.jpg" class="img-fluid rounded-start">
-            </div>
-            <div class="col-md-8">
+              <div class="col-md-4">
+                <img src="{{farm.image}}" class="img-fluid rounded-start">
+              </div>
+              <div class="col-md-8">
                 <div class="card-body">
-                <h5 class="card-title">{{farm.name}}</h5>
-                <p class="card-text">
+                  <h5 class="card-title">{{farm.name}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{farm.city}} {{farm.street}} {{farm.number}}</h6>
+                  <p class="card-text">
                     {% for product in farm.products.all %}
-                    <h6>- {{product.name}} {{product.price}}€</h6>
+                    
+                    <h6>- {{product.name}} {{product.price}}€ / kg</h6>
+                    <img src="{{product.image}}" class="img-fluid rounded-start" width="100" height="100" style="display: inline;">
                     {% endfor %}
                 </p>
-                </div>
-
                 <a class="btn btn-primary" href="{% url 'farm_detail' '1' %}">Go to store</a>
+                </div>
+              </div>
             </div>
-            </div>
-        </div>
+          </div>
         {% endfor %}
     {% else %}
     <h5>Pas de fermes dans la base de données</h5>
