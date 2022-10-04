@@ -4,11 +4,18 @@
     {% if products|length > 0 %}
         {% for product in products %}
         <div class="card">
-            <div class="card-body">
+            <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{product.image}}" class="img-fluid rounded-start">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
                 <h5 class="card-title">{{product.name}}</h5>
                 <p class="card-text">
-                    {{product.price}} € / kilo 
+                    <h6>{{product.price}}€ le kilo</h6>
                 </p>
+                </div>
+            </div>
             </div>
         </div>
         {% endfor %}
