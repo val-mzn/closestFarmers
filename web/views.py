@@ -21,3 +21,18 @@ def products_list(request):
     template = loader.get_template('web/products.html')
     products = Product.objects.all()
     return HttpResponse(template.render({'products': products}, request))
+
+def searchs_list(request, search):
+    template = loader.get_template('web/searchs.html')
+
+    farms = Farm.objects.all()
+    farms_selected = []
+
+    for farm in farms:
+        if search in farm.name.lower():
+            farms_selected.append(farm)
+        for product in farm.products.all():
+            if search in product.name.lower():
+                farms_selected.append(farm)
+
+    return HttpResponse(template.render({'searchs': farms_selected}, request))

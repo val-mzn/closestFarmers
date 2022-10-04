@@ -1,0 +1,21 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+
+    {% if searchs|length > 0 %}
+        {% for search in searchs %}
+        <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{search.name}}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+    {% else %}
+    <h5>Pas de resultats dans la base de données</h5>
+    {% endif %}
+
+{% endblock %}
