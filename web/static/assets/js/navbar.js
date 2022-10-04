@@ -1,7 +1,7 @@
-$('.navTrigger').click(function () {
-    $(this).toggleClass('active');
-    console.log("Clicked menu");
-    $("#mainListDiv").toggleClass("show_list");
-    $("#mainListDiv").fadeIn();
-
-});
+$(window).scroll(function() {
+    if ($(document).scrollTop() > 100) {
+      $('.navbar').addClass('navbar-color-changed');
+    } else {
+      $('.navbar').removeClass('navbar-color-changed');
+    }
+  });

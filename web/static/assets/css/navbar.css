@@ -58,7 +58,7 @@
 .home {
     width: 100%;
     height: 100vh;
-    background-image: url(https://images6.alphacoders.com/713/713114.jpg);
+    background-image: url('../img/home_banner');
     background-position: center top;
     background-size: cover;
 }
@@ -358,4 +358,8 @@
     .myP {
         padding: 2%;
     }
+}
+
+.navbar-color-changed{
+    background-color: #111111;
 }
