@@ -12,11 +12,11 @@
     <link href="{% static './assets/css/navbar.css' %}" rel="stylesheet">
     {% block title %}{% endblock %}
 </head>
-<body>
+<body style="background-image: url(static/assets/img/home_banner.png);">
     <script href="{% static './node_modules/jquery/dist/jquery.min.css' %}"></script>
     {% include 'web/navbar.html' %}
 
-    <div class="container my-4 p-4">
+    <div class="container my-4 p-4" >
         {% block content %}{% endblock %}
     </div>
     <script type="text/javascript" src="{% static './assets/js/navbar.js' %}"></script>
