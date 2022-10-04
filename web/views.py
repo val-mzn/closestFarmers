@@ -24,6 +24,15 @@ def products_list(request):
 
 def searchs_list(request, search):
     template = loader.get_template('web/searchs.html')
-    results = Product.objects.filter(name=search)
 
-    return HttpResponse(template.render({'searchs': results}, request))
+    farms = Farm.objects.all()
+    farms_selected = []
+
+    for farm in farms:
+        if search in farm.name.lower():
+            farms_selected.append(farm)
+        for product in farm.products.all():
+            if search in product.name.lower():
+                farms_selected.append(farm)
+
+    return HttpResponse(template.render({'searchs': farms_selected}, request))
