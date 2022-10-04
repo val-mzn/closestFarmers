@@ -9,6 +9,7 @@ class Product(models.Model):
 
 class Farm(models.Model):
     name = models.CharField(max_length=30)
+    image = models.URLField()
     products = models.ManyToManyField(Product)
     city = models.CharField(max_length=30)
     street = models.CharField(max_length=30)
