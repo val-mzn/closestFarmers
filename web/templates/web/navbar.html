@@ -2,9 +2,9 @@
     <a class="navbar-brand">Field To Fork</a>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="{% url 'home' %}">Accueil</a>
-            <a class="nav-item nav-link" href="{% url 'farms_list' %}">Les Fermes</a>
-            <a class="nav-item nav-link" href="{% url 'products_list' %}">Produits</a>
+            <a class="nav-item nav-link {% if request.path == '/' %}active {% endif %}" href="{% url 'home' %}">Accueil</a>
+            <a class="nav-item nav-link {% if request.path == '/farms' %}active {% endif %}" href="{% url 'farms_list' %}">Les Fermes</a>
+            <a class="nav-item nav-link {% if request.path == '/products' %}active {% endif %}" href="{% url 'products_list' %}">Produits</a>
         </div>
     </div>
     <form class="d-flex">
