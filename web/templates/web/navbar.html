@@ -1,3 +1,9 @@
+<script>
+    function search(){
+        window.location.replace('/search/' + document.getElementById('searchvalue').value)
+    }
+</script>
+
 <nav class="navbar navbar-expand-lg px-2" style="background-color: var(--col-2);">
     <a class="navbar-brand">Field To Fork</a>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -7,8 +13,8 @@
             <a class="nav-item nav-link {% if request.path == '/products' %}active {% endif %}" href="{% url 'products_list' %}">Produits</a>
         </div>
     </div>
-    <form class="d-flex">
-        <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+    <div class="d-flex">
+        <input class="form-control me-1" type="search" placeholder="Search" id="searchvalue" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit" onclick="search()">Search</button>
+    </div>
 </nav>

@@ -21,3 +21,9 @@ def products_list(request):
     template = loader.get_template('web/products.html')
     products = Product.objects.all()
     return HttpResponse(template.render({'products': products}, request))
+
+def searchs_list(request, search):
+    template = loader.get_template('web/searchs.html')
+    results = Product.objects.filter(name=search)
+
+    return HttpResponse(template.render({'searchs': results}, request))
