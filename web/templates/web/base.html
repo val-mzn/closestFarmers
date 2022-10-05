@@ -10,10 +10,12 @@
     <link href="{% static './node_modules/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static './assets/css/style.css' %}" rel="stylesheet">
     <link href="{% static './assets/css/navbar.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin=""/>
     {% block title %}{% endblock %}
 </head>
 <body style="background-image: url(static/assets/img/home_banner.png);">
     <script href="{% static './node_modules/jquery/dist/jquery.min.css' %}"></script>
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
     {% include 'web/navbar.html' %}
 
     <div class="container my-4 p-4" >
