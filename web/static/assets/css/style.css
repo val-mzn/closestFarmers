@@ -18,4 +18,8 @@ body {
     border-radius: 12px;
 }
 
-.small_map { height: 320px; width: 320px; }
+.small_map { min-height: 320px; min-width: 320px; }
+
+.ico-produit {
+    height: 50px;
+}

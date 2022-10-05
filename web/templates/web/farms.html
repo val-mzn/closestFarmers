@@ -2,26 +2,48 @@
 
 {% block content %}
 
+
     {% if farms|length > 0 %}
         {% for farm in farms %}
         <div class="card mb-3">
+          <div class="card-header">
+            <h5 class="card-title">{{farm.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{farm.city}} {{farm.street}} {{farm.number}}</h6>
+          </div>
             <div class="row g-0">
               <div class="col-md-4">
                 <div id="{{farm.id}}" class="small_map"></div>
               </div>
               <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">{{farm.name}}</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">{{farm.city}} {{farm.street}} {{farm.number}}</h6>
-                  <p class="card-text">
-                    {% for product in farm.products.all %}
-                    
-                    <h6>- {{product.name}} {{product.price}}€ / kg</h6>
-                    <img src="{{product.image}}" class="img-fluid rounded-start" width="100" height="100" style="display: inline;">
-                    {% endfor %}
-                </p>
-                <a class="btn btn-primary" href="{% url 'farm_detail' '1' %}">Go to store</a>
-                </div>
+               
+
+                    <table class="table table-striped table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col" colspan="2">Produit</th>
+                          <th scope="col">Prix</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for product in farm.products.all %}
+                        <tr>
+                          <td>
+                            {{product.name}}
+                          </td>
+                            <td>
+                              <img src="{{product.image}}" class="ico-produit" style="display: inline;">
+                            </td>
+                            <td>
+                              <h6>{{product.price}}€ / kg</h6>
+                            </td> 
+                        </tr>
+                                           
+                        {% endfor %}
+                      </tbody>
+                 
+                    </table>
+                   
+
               </div>
              
             </div>
