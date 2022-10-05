@@ -7,7 +7,7 @@
         <div class="card mb-3">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="{{farm.image}}" class="img-fluid rounded-start">
+                <div id="{{farm.id}}" class="small_map"></div>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -23,11 +23,22 @@
                 <a class="btn btn-primary" href="{% url 'farm_detail' '1' %}">Go to store</a>
                 </div>
               </div>
+             
             </div>
           </div>
+
+          <script>
+            var map = L.map('{{farm.id}}').setView([45.211480, 5.770226], 13);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                dragging: false,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+            var marker = L.marker([45.211480, 5.770226]).addTo(map);
+          
+          </script>
         {% endfor %}
     {% else %}
     <h5>Pas de fermes dans la base de données</h5>
     {% endif %}
-
 {% endblock %}
