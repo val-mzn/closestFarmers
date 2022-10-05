@@ -17,13 +17,13 @@ def farm_detail(request, id):
     farm = Farm.objects.get(id=id)
     return HttpResponse(template.render({'farm': farm}, request))
 
-def products_list(request):
-    template = loader.get_template('web/products.html')
-    products = Product.objects.all()
-    return HttpResponse(template.render({'products': products}, request))
+def carte(request):
+    template = loader.get_template('web/carte.html')
+    farms = Farm.objects.all()
+    return HttpResponse(template.render({'farms': farms}, request))
 
 def searchs_list(request, search):
-    template = loader.get_template('web/searchs.html')
+    template = loader.get_template('web/farms.html')
 
     farms = Farm.objects.all()
     farms_selected = []
@@ -35,4 +35,4 @@ def searchs_list(request, search):
             if search in product.name.lower():
                 farms_selected.append(farm)
 
-    return HttpResponse(template.render({'searchs': farms_selected}, request))
+    return HttpResponse(template.render({'farms': farms_selected}, request))
